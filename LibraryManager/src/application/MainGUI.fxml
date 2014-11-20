@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="137.0" prefWidth="417.0" type="javafx.scene.layout.Pane" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <TabPane prefHeight="417.0" prefWidth="636.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Quản lý mượn trả">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="538.0" layoutY="2.0" mnemonicParsing="false" text="Thêm giao dịch" />
+                        <TableView layoutY="27.0" prefHeight="364.0" prefWidth="636.0">
+                          <columns>
+                            <TableColumn prefWidth="174.0" text="Sinh viên" />
+                            <TableColumn prefWidth="157.0" text="Sách" />
+                              <TableColumn prefWidth="83.0" text="Mượn/Trả" />
+                              <TableColumn prefWidth="118.0" text="Thời gian" />
+                              <TableColumn prefWidth="103.0" text="Ghi chú" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+          <Tab text="Quản lý kho sách">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="517.0" layoutY="2.0" mnemonicParsing="false" text="Thêm" />
+                        <Button layoutX="563.0" layoutY="2.0" mnemonicParsing="false" text="Sửa" />
+                        <Button layoutX="599.0" layoutY="2.0" mnemonicParsing="false" text="Xóa" />
+                        <TableView layoutY="27.0" prefHeight="361.0" prefWidth="636.0">
+                          <columns>
+                            <TableColumn prefWidth="209.0" text="Tên sách" />
+                            <TableColumn prefWidth="92.0" text="Thể loại" />
+                              <TableColumn prefWidth="139.0" text="Tác giả" />
+                              <TableColumn prefWidth="106.0" text="Nhà xuất bản" />
+                              <TableColumn prefWidth="89.0" text="Số lượng còn" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+            <Tab text="Quản lý sinh viên mượn">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="517.0" layoutY="2.0" mnemonicParsing="false" text="Thêm" />
+                        <Button layoutX="563.0" layoutY="2.0" mnemonicParsing="false" text="Sửa" />
+                        <Button layoutX="599.0" layoutY="2.0" mnemonicParsing="false" text="Xóa" />
+                        <TableView layoutY="27.0" prefHeight="363.0" prefWidth="636.0">
+                          <columns>
+                            <TableColumn prefWidth="174.0" text="Tên sinh viên" />
+                            <TableColumn prefWidth="103.0" text="MSSV" />
+                              <TableColumn prefWidth="106.0" text="Ngày sinh" />
+                              <TableColumn prefWidth="165.0" text="Khoa/Viện" />
+                              <TableColumn prefWidth="87.0" text="Số sách mượn" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</fx:root>
