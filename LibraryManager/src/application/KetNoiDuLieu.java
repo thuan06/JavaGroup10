@@ -23,7 +23,7 @@ public class KetNoiDuLieu {
             String pass = "12345";
             String url = "jdbc:mysql://127.0.0.1:3306/librarydb";
             connection =  DriverManager.getConnection(url, user, pass);
-            System.out.println("Ket noi thanh cong");
+            System.out.println("Kết nối thành công đến database!");
 
         } catch( ClassNotFoundException | SQLException e){
             System.out.println("Loi xay ra"+ e );
@@ -70,7 +70,8 @@ public class KetNoiDuLieu {
     public Connection getConn(){
        return connection;
     }
-    
+    /*Code for debug
+     
     public static void main(String[] args) throws SQLException {
         KetNoiDuLieu a = new KetNoiDuLieu();
         try{
@@ -95,4 +96,5 @@ public class KetNoiDuLieu {
         }
        
     }
+    */
 }
