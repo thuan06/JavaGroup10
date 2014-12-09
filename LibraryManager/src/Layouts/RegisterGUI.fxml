@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="301.0" prefWidth="438.0" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="110.0" layoutY="28.0" text="Thêm tài khoản mới">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="117.0" layoutY="55.0" text="(*Tất cả các trường đều phải được nhập)">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="121.0" text="Tên đăng nhập">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="152.0" text="Mật khẩu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="183.0" text="Nhập lại mật khẩu">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="43.0" layoutY="213.0" text="Họ Tên">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="loginName" layoutX="179.0" layoutY="119.0" prefHeight="25.0" prefWidth="200.0" />
+      <TextField fx:id="Name" layoutX="179.0" layoutY="211.0" prefHeight="25.0" prefWidth="200.0" />
+      <Button layoutX="179.0" layoutY="251.0" mnemonicParsing="false" onAction="#adduser" text="Thêm">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="241.0" layoutY="251.0" mnemonicParsing="false" onAction="#cancel" text="Hủy">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label fx:id="tip" layoutX="51.0" layoutY="79.0" textFill="#f81105" />
+      <PasswordField fx:id="pass" layoutX="179.0" layoutY="150.0" prefHeight="25.0" prefWidth="200.0" />
+      <PasswordField fx:id="repass" layoutX="179.0" layoutY="181.0" prefHeight="25.0" prefWidth="200.0" />
+   </children>
+</fx:root>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root prefHeight="277.0" prefWidth="485.0" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="72.0" layoutY="31.0" text="Chương trình quản lý thư viện">
+         <font>
+            <Font name="Arial Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="99.0" text="Tên tài khoản">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="30.0" layoutY="137.0" text="Mật khẩu">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="dangnhap_tf" layoutX="161.0" layoutY="97.0" prefHeight="25.0" prefWidth="209.0" />
+      <PasswordField fx:id="matkhau_tf" layoutX="161.0" layoutY="137.0" prefHeight="25.0" prefWidth="209.0" />
+      <Button fx:id="login_btn" layoutX="161.0" layoutY="224.0" mnemonicParsing="false" text="Đăng nhập" />
+      <Button fx:id="reg_btn" layoutX="258.0" layoutY="224.0" mnemonicParsing="false" onAction="#registerClick" text="Tạo tài khoản" />
+      <CheckBox layoutX="161.0" layoutY="184.0" mnemonicParsing="false" text="Nhớ mật khẩu" />
+   </children>
+</fx:root>
