@@ -35,7 +35,9 @@ public class RegisterController extends Pane{
 	private Label tip;
 	String _loginName, _pass, _repass, _Name;
 	private Stage nowStage;
-	
+	KetNoiDuLieu connection = new KetNoiDuLieu();
+	Statement statement;
+    ResultSet result;
 	public RegisterController(Stage stage)
 	{
 		FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Layouts/RegisterGUI.fxml"));
@@ -53,14 +55,13 @@ public class RegisterController extends Pane{
 	@FXML
 	private void adduser() throws SQLException
 	{
-		Statement statement;
-	    ResultSet result;
-	    KetNoiDuLieu connection = new KetNoiDuLieu();
+		
+	    
 	    _loginName = loginName.getText();
         _pass = pass.getText();
         _repass = repass.getText();
         _Name = Name.getText();
-	    //Kiểm tra việc trống trường
+	    //Kiểm tra nhap lieu
 	    if(_loginName.equals("")||_pass.equals("")||_Name.equals(""))
 	    {
 	    	tip.setText("Tất cả các trường đều phải được nhập!");
@@ -70,9 +71,10 @@ public class RegisterController extends Pane{
 	    result = connection.selectOneColum("taikhoandangnhap", "TenDangNhap");
         while (result.next()) {
             String tenDangNhap = result.getString("TenDangNhap");
+          
             if (tenDangNhap.equalsIgnoreCase(_loginName)) {
-                tip.setText("Tên tài khoản này đã tồn tại!");
-                return;
+               tip.setText("Tên tài khoản này đã tồn tại!");
+               return;
             }
           //Kiem tra pass va repass
             

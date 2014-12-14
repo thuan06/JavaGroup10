@@ -23,7 +23,7 @@ public class KetNoiDuLieu {
             String pass = "12345";
             String url = "jdbc:mysql://127.0.0.1:3306/librarydb";
             connection =  DriverManager.getConnection(url, user, pass);
-            System.out.println("Kết nối thành công đến database!");
+            //System.out.println("Kết nối thành công đến database!");
 
         } catch( ClassNotFoundException | SQLException e){
             System.out.println("Loi xay ra"+ e );
@@ -70,31 +70,5 @@ public class KetNoiDuLieu {
     public Connection getConn(){
        return connection;
     }
-    /*Code for debug
-     
-    public static void main(String[] args) throws SQLException {
-        KetNoiDuLieu a = new KetNoiDuLieu();
-        try{
-        ResultSet b = a.selectAll("sach");
-        ResultSet c = a.selectOneColum("docgia", "TenDocGia");
-        ResultSet d = a.selectOneRow("taikhoandangnhap", "HoTen", "minh");
-        while(b.next()){
-          String idSach = b.getString("ID_Sach");
-          String tenSach = b.getString("TenSach");
-          System.out.println("ID_Sach "+ idSach + "Tên sách là : "+ tenSach); 
-        }
-        while(c.next()){          
-          String tenDocGia = c.getString("TenDocGia");
-          System.out.println("Ten doc gia la : "+ tenDocGia); 
-        }
-        while(d.next()){          
-          String hoTen = d.getString("HoTen");
-          System.out.println("Ho ten tai khoan dang nhap la : "+ hoTen); 
-        }
-        } catch ( Exception e){
-            e.printStackTrace();
-        }
-       
-    }
-    */
+    
 }

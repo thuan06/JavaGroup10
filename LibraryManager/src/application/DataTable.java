@@ -11,6 +11,7 @@ public class DataTable {
 	private ObservableList<Book> BookData = FXCollections.observableArrayList();
 	private ObservableList<Author> AuthorData = FXCollections.observableArrayList();
 	private ObservableList<DocGia> DocGiaData = FXCollections.observableArrayList();
+	private ObservableList<MuonTra> MuonTraData = FXCollections.observableArrayList();
 	KetNoiDuLieu con = new KetNoiDuLieu();
 	public ObservableList<Book> getBookData()
 	{
@@ -92,5 +93,29 @@ public class DataTable {
 	
 		return DocGiaData;
 	}
+	public ObservableList<MuonTra> getMuonTraData()
+	{
+		String sql = "SELECT * FROM muontra";
+		try
+		{
+			Statement statement = con.getConn().createStatement();
+			ResultSet result = statement.executeQuery(sql);
+			MuonTra muontra;
+			while (result.next())
+			{
+				muontra = new MuonTra(result.getString("ID_MuonTra"), result.getString("DocGia_ID_DocGia"), result.getString("Sach_ID_Sach"), result.getString("NgayMuon"), result.getString("NgayTra"));
+				MuonTraData.add(muontra);
+			}
+			
+			result.close();
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		
 	
+		return MuonTraData;
+	}
 }

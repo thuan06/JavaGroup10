@@ -10,6 +10,7 @@ public class Search {
 
 	private ObservableList<Book> BookData = FXCollections.observableArrayList();
 	private ObservableList<Author> AuthorData = FXCollections.observableArrayList();
+	private ObservableList<DocGia> DocGiaData = FXCollections.observableArrayList();
 	public ObservableList<Book> searchBook (String name) throws SQLException
 	{
 		KetNoiDuLieu con = new KetNoiDuLieu();
@@ -63,7 +64,7 @@ public class Search {
 			return null;
 		}
 		result.close();
-		//Lay thong tin sach
+		//Lay thong tin tac gia
 		result = con.selectOneRow("tacgia", "TenTacGia", name);
 		while (result.next())
 		{
@@ -72,5 +73,37 @@ public class Search {
 		}
 		result.close();
 		return AuthorData;
+	}
+	
+	public ObservableList<DocGia> searchDocGia(String name) throws SQLException
+	{
+		KetNoiDuLieu con = new KetNoiDuLieu();
+		//Kiem tra ten sach trong CSDL
+		ResultSet result = con.selectOneColum("docgia", "TenDocGia");
+		boolean flag =false;
+		while(result.next())
+		{
+			String ten = result.getString("TenDocGia");
+			if(ten.equalsIgnoreCase(name))
+			{
+				flag = true;
+				break;
+			}
+		}
+		if(flag == false)
+		{
+			System.out.println("Tên độc giả không có trong CSDL!");
+			return null;
+		}
+		result.close();
+		//Lay thong tin doc gia
+		result = con.selectOneRow("docgia", "TenDocGia", name);
+		while (result.next())
+		{
+			DocGia docgia = new DocGia(result.getString("ID_DocGia"), result.getString("TenDocGia"), result.getString("NgheNghiep"), result.getString("NgayCapThe"));
+			DocGiaData.add(docgia);
+		}
+		result.close();
+		return DocGiaData;
 	}
 }

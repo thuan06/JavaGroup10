@@ -1,4 +1,4 @@
-package application;
+package Controller;
 
 import javafx.scene.layout.Pane;
 
@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 import application.KetNoiDuLieu;
+import application.Main;
 import application.Register;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -92,6 +93,9 @@ public class LoginController extends Pane{
 			if(matkhau.equalsIgnoreCase(password))
 			{
 				System.out.println(acc+" đăng nhập thành công!");
+				new Main().start(new Stage());
+				nowStage.close();
+				
 			}
 			else
 			{

@@ -22,10 +22,14 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="dangnhap_tf" layoutX="161.0" layoutY="97.0" prefHeight="25.0" prefWidth="209.0" />
-      <PasswordField fx:id="matkhau_tf" layoutX="161.0" layoutY="137.0" prefHeight="25.0" prefWidth="209.0" />
-      <Button fx:id="login_btn" layoutX="161.0" layoutY="224.0" mnemonicParsing="false" text="Đăng nhập" />
+      <TextField fx:id="accName" layoutX="161.0" layoutY="97.0" prefHeight="25.0" prefWidth="209.0" />
+      <PasswordField fx:id="pass1" layoutX="161.0" layoutY="137.0" prefHeight="25.0" prefWidth="209.0" />
+      <Button layoutX="161.0" layoutY="224.0" mnemonicParsing="false" onAction="#loginClick" text="Đăng nhập" />
       <Button fx:id="reg_btn" layoutX="258.0" layoutY="224.0" mnemonicParsing="false" onAction="#registerClick" text="Tạo tài khoản" />
-      <CheckBox layoutX="161.0" layoutY="184.0" mnemonicParsing="false" text="Nhớ mật khẩu" />
+      <Label fx:id="tip" layoutX="161.0" layoutY="181.0" textFill="RED">
+         <font>
+            <Font name="Arial Italic" size="12.0" />
+         </font>
+      </Label>
    </children>
 </fx:root>
