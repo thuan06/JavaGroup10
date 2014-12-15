@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="ngaymuon" layoutX="111.0" layoutY="112.0" />
+      <TextField fx:id="idSach" layoutX="111.0" layoutY="81.0" />
+      <TextField fx:id="idDocGia" layoutX="111.0" layoutY="51.0" />
+      <TextField fx:id="idMuon" layoutX="111.0" layoutY="22.0" />
+      <Label layoutX="24.0" layoutY="55.0" text="ID Độc giả" />
+      <Label layoutX="24.0" layoutY="143.0" prefHeight="17.0" prefWidth="55.0" text="Ngày trả" />
+      <Label layoutX="22.0" layoutY="116.0" prefHeight="17.0" prefWidth="67.0" text="Ngày mượn" />
+      <Label layoutX="24.0" layoutY="26.0" text="ID Mượn Trả" />
+      <Label layoutX="24.0" layoutY="85.0" text="ID Sách" />
+      <TextField fx:id="ngaytra" layoutX="111.0" layoutY="139.0" />
+      <Label layoutX="306.0" layoutY="85.0" text="Tìm Độc giả" />
+      <TextField fx:id="searchDocGia" layoutX="372.0" layoutY="81.0" />
+      <Button layoutX="528.0" layoutY="81.0" mnemonicParsing="false" onAction="#timDocGia" text="Tìm" />
+      <Button layoutX="111.0" layoutY="190.0" mnemonicParsing="false" onAction="#muonSachClick" text="Mượn" />
+      <Button layoutX="166.0" layoutY="190.0" mnemonicParsing="false" onAction="#cancel" text="Hủy" />
+      <Label layoutX="305.0" layoutY="47.0" prefHeight="17.0" prefWidth="67.0" text="Tìm Sách" />
+      <Button layoutX="528.0" layoutY="43.0" mnemonicParsing="false" onAction="#timsach" text="Tìm" />
+      <TextField fx:id="searchBook" layoutX="372.0" layoutY="43.0" />
+      <TabPane layoutY="220.0" prefHeight="231.0" prefWidth="566.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Sách">
+               <content>
+                  <Pane prefHeight="202.0" prefWidth="629.0">
+                     <children>
+                        <TableView fx:id="BookTable" layoutY="-3.0" prefHeight="192.0" prefWidth="564.0">
+                           <columns>
+                              <TableColumn fx:id="idBook" prefWidth="83.0" text="ID Sách" />
+                              <TableColumn fx:id="nameBook" prefWidth="190.0" text="Tên sách" />
+                              <TableColumn fx:id="typeBook" prefWidth="106.0" text="Loại sách" />
+                              <TableColumn fx:id="statusBook" prefWidth="90.0" text="Giá" />
+                              <TableColumn fx:id="Book_ID_Author" prefWidth="92.0" text="ID Tác giả" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+          <Tab text="Độc giả">
+               <content>
+                  <Pane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="DocGiaTable" prefHeight="191.0" prefWidth="566.0">
+                           <columns>
+                              <TableColumn fx:id="ID_DocGia" prefWidth="111.0" text="ID Độc giả" />
+                              <TableColumn fx:id="nameDocGia" prefWidth="184.0" text="Họ Tên" />
+                              <TableColumn fx:id="job" prefWidth="142.0" text="Nghề nghiệp" />
+                              <TableColumn fx:id="NgayCap" prefWidth="128.0" text="Ngày cấp thẻ" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Label layoutX="305.0" layoutY="129.0" text="(*Tìm theo tên)">
+         <font>
+            <Font name="System Italic" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="tip" layoutX="111.0" layoutY="173.0" textFill="RED" />
+   </children>
+</fx:root>

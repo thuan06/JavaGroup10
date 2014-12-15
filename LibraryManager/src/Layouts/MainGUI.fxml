@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<fx:root type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TabPane prefHeight="476.0" prefWidth="707.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Thông tin sách">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="36.0" layoutY="40.0" text="Nhập ID xóa sách" />
+                        <TextField fx:id="delIDBook" layoutX="139.0" layoutY="36.0" />
+                        <Label layoutX="386.0" layoutY="40.0" text="Tìm kiếm sách" />
+                        <Label layoutX="386.0" layoutY="61.0" text="(*Tìm theo tên)" />
+                        <TextField fx:id="searchBook" layoutX="491.0" layoutY="36.0" />
+                        <Button layoutX="83.0" layoutY="93.0" mnemonicParsing="false" onAction="#addBook" text="Thêm sách mới" />
+                        <Button layoutX="255.0" layoutY="93.0" mnemonicParsing="false" onAction="#editBook" text="Sửa thông tin sách" />
+                        <Button layoutX="443.0" layoutY="93.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                        <Button layoutX="294.0" layoutY="36.0" mnemonicParsing="false" onAction="#delBook" text="Xóa" />
+                        <Button layoutX="648.0" layoutY="36.0" mnemonicParsing="false" onAction="#timsach" text="Tìm" />
+                        <TableView fx:id="BookTable" layoutY="131.0" prefHeight="315.0" prefWidth="707.0">
+                          <columns>
+                            <TableColumn fx:id="idBook" prefWidth="94.0" text="ID Sách" />
+                            <TableColumn fx:id="nameBook" prefWidth="206.0" text="Tên sách" />
+                              <TableColumn fx:id="typeBook" prefWidth="145.0" text="Loại sách" />
+                              <TableColumn fx:id="statusBook" prefWidth="139.0" text="Giá" />
+                              <TableColumn fx:id="Book_ID_Author" prefWidth="122.0" text="ID Tác giả" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Thông tin mượn trả">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button layoutX="636.0" layoutY="42.0" mnemonicParsing="false" onAction="#traSach" text="Trả sách" />
+                        <Button layoutX="5.0" layoutY="7.0" mnemonicParsing="false" onAction="#muonSach" text="Mượn sách" />
+                        <Button layoutX="88.0" layoutY="7.0" mnemonicParsing="false" text="Refresh" />
+                        <Label layoutX="314.0" layoutY="11.0" text="Tìm kiếm thông tin mượn trả" />
+                        <TextField layoutX="478.0" layoutY="7.0" />
+                        <Button layoutX="636.0" layoutY="7.0" mnemonicParsing="false" text="Tìm" />
+                        <TableView fx:id="MuonTraTable" layoutX="5.0" layoutY="78.0" prefHeight="366.0" prefWidth="698.0">
+                          <columns>
+                            <TableColumn fx:id="idMuonTra" prefWidth="111.0" text="ID Mượn Trả" />
+                              <TableColumn fx:id="MT_ID_DocGia" prefWidth="124.0" text="ID Độc giả" />
+                              <TableColumn fx:id="MT_ID_Sach" prefWidth="127.0" text="ID Sách" />
+                            <TableColumn fx:id="NgayMuon" prefWidth="167.0" text="Ngày mượn" />
+                              <TableColumn fx:id="NgayTra" prefWidth="168.0" text="Ngày trả" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="314.0" layoutY="46.0" text="Nhập ID Mượn Trả" />
+                        <TextField fx:id="idTraSach" layoutX="478.0" layoutY="42.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Thông tin độc giả">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="20.0" layoutY="37.0" text="Nhập ID xóa Độc giả" />
+                        <TextField fx:id="delIDDocGia" layoutX="144.0" layoutY="33.0" />
+                        <Button layoutX="302.0" layoutY="33.0" mnemonicParsing="false" onAction="#delDocGia" text="Xóa" />
+                        <Label layoutX="392.0" layoutY="37.0" text="Tìm Độc giả" />
+                        <Label layoutX="392.0" layoutY="50.0" text="(*Tìm theo tên)" />
+                        <TextField fx:id="searchDocGia" layoutX="482.0" layoutY="33.0" />
+                        <Button layoutX="641.0" layoutY="33.0" mnemonicParsing="false" onAction="#timDocGia" text="Tìm" />
+                        <Button layoutX="144.0" layoutY="72.0" mnemonicParsing="false" onAction="#addReader" text="Thêm Độc giả" />
+                        <Button layoutX="274.0" layoutY="72.0" mnemonicParsing="false" onAction="#editReader" text="Sửa Độc giả" />
+                        <Button layoutX="404.0" layoutY="72.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                        <TableView fx:id="DocGiaTable" layoutX="6.0" layoutY="107.0" prefHeight="330.0" prefWidth="696.0">
+                          <columns>
+                            <TableColumn fx:id="ID_DocGia" prefWidth="152.0" text="ID Độc giả" />
+                            <TableColumn fx:id="nameDocGia" prefWidth="214.0" text="Họ Tên" />
+                              <TableColumn fx:id="job" prefWidth="184.0" text="Nghề nghiệp" />
+                              <TableColumn fx:id="NgayCap" prefWidth="145.0" text="Ngày cấp thẻ" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Thông tin tác giả">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="26.0" layoutY="37.0" text="Nhâp ID xóa Tác giả" />
+                        <TextField fx:id="delIDAuthor" layoutX="147.0" layoutY="33.0" />
+                        <Button layoutX="302.0" layoutY="33.0" mnemonicParsing="false" onAction="#delAuthor" text="Xóa" />
+                        <Label layoutX="399.0" layoutY="37.0" text="Tìm Tác giả" />
+                        <Label layoutX="389.0" layoutY="50.0" text="(*Tìm theo tên)" />
+                        <TextField fx:id="searchAuthor" layoutX="479.0" layoutY="33.0" />
+                        <Button layoutX="634.0" layoutY="33.0" mnemonicParsing="false" onAction="#timTacGia" text="Tìm" />
+                        <Button layoutX="90.0" layoutY="78.0" mnemonicParsing="false" onAction="#addAuthor" text="Thêm Tác giả" />
+                        <Button layoutX="244.0" layoutY="78.0" mnemonicParsing="false" onAction="#editAuthor" text="Sửa Tác giả" />
+                        <Button layoutX="389.0" layoutY="78.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+                        <TableView fx:id="AuthorTable" layoutX="14.0" layoutY="115.0" prefHeight="327.0" prefWidth="688.0">
+                          <columns>
+                            <TableColumn fx:id="ID_Author" prefWidth="191.0" text="ID Tác giả" />
+                            <TableColumn fx:id="authorName" prefWidth="255.0" text="Họ Tên" />
+                              <TableColumn fx:id="authorBirth" prefWidth="241.0" text="Năm sinh" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</fx:root>

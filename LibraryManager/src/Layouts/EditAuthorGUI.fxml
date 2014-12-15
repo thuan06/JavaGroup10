@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<fx:root prefHeight="255.0" prefWidth="337.0" type="javafx.scene.layout.Pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="60.0" layoutY="26.0" text="Sửa thông tin tác giả">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+      </Label>
+      <Label layoutX="31.0" layoutY="73.0" text="ID Tác giả" />
+      <Label layoutX="31.0" layoutY="112.0" text="Tên tác giả" />
+      <Label layoutX="31.0" layoutY="148.0" text="Năm sinh" />
+      <TextField fx:id="ID" layoutX="116.0" layoutY="69.0" />
+      <TextField fx:id="Name" layoutX="116.0" layoutY="108.0" />
+      <TextField fx:id="Birth" layoutX="116.0" layoutY="144.0" />
+      <Label fx:id="tip" layoutX="116.0" layoutY="176.0" textFill="RED" />
+      <Button layoutX="116.0" layoutY="207.0" mnemonicParsing="false" onAction="#edit" text="Sửa" />
+      <Button layoutX="190.0" layoutY="207.0" mnemonicParsing="false" onAction="#cancel" text="Hủy" />
+   </children>
+</fx:root>
